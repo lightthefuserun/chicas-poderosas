@@ -1,0 +1,59 @@
+@import "mixins";
+
+// Margins
+$m1: 8px;
+$m2: 16px;
+$m3: 24px;
+$m4: 32px;
+$m5: 40px;
+$m6: 48px;
+$m7: 56px;
+$m8: 64px;
+$m9: 72px;
+$m10: 80px;
+$m11: 88px;
+$m12: 96px;
+$m13: 104px;
+$m14: 112px;
+$m15: 120px;
+$m16: 128px;
+$m17: 136px;
+$m18: 144px;
+$m19: 152px;
+$m20: 160px;
+
+// Breakpoints
+$xs: 350px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+// Border-radius
+$br1: 4px;
+$br2: 8px;
+$br3: 16px;
+$br4: 24px;
+
+// Colors
+$color-black: #3B3A40;
+$color-white: #FDFCF6;
+$color-red: #E95D67;
+
+// Container
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $m2;
+    padding-right: $m2;
+    max-width: 700px;
+}
+
+.container-xl {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $m2;
+    padding-right: $m2;
+    max-width: 900px;
+}
+

@@ -1,0 +1,424 @@
+@import '../library/reset';
+@import '../library/variables';
+@import '../library/margins';
+@import '../library/typography';
+@import '../library/buttons';
+@import '../library/layout';
+@import '../library/hierarchy';
+@import '../library/mixins';
+
+
+body { font-family: 'Lato', sans-serif; }
+
+section {
+    padding-top: $m8;
+    padding-bottom: $m8;
+}
+
+.double-panel{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "left right";
+    color: $color-white;
+    @media (max-width: $md) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "left"
+            "right"
+        ;
+    }
+    .left { 
+        grid-area: left; 
+        padding: $m6;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .right { 
+        grid-area: right; 
+        padding: $m6;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+.title-group {
+    .subtitle {
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        font-weight: bold;
+        color: $color-black;
+    }
+    .title {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $color-red;
+    }
+}
+
+.hero { 
+    min-height: 100vh;
+    @media (max-width: $md) { display: block; min-height: auto; }
+    .left {
+        // background-blend-mode: multiply;
+        background-color: $color-black;
+        background-image: url('../img/background-Mariana.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        justify-content: center;
+        @media (max-width: $md) {
+            background-image: none;
+            background-color: $color-white;
+        }
+        .chicas-logo {
+            max-height: 320px;
+            width: auto;
+            &.desktop {
+                display: block;
+                @media (max-width: $md) { display: none; }
+            }
+            &.mobile {
+                display: none;
+                @media (max-width: $md) { 
+                    display: block;
+                    max-width: 70vw;
+                }
+            }
+        }
+    }
+    .right {
+        background-color: $color-red;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        @media (max-width: $md) { align-items: center; }
+        p {
+            display: block;
+            &:nth-child(1) {
+                font-size: 22px;
+                padding-top: $m4;
+            }
+            &:nth-child(2) {
+                font-size: 40px;
+                font-weight: 800;
+                text-transform: uppercase;
+                margin-bottom: $m10*2;
+                @media (max-width: $md) { margin-bottom: $m8; text-align: center; }
+            }
+            &:nth-child(3) {
+                font-size: 18px;
+                margin-bottom: $m1;
+            }
+            &:nth-child(4) {
+                font-size: 18px;
+                text-transform: uppercase;
+                padding: $m1 $m2;
+                background-color: $color-black;
+            }
+        }
+    }
+}
+
+.intro-video {
+    // background-image: url('../img/background-mariana.jpg');
+    // background-size: cover;
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-color: $color-black;
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px; height: 0; overflow: hidden;   
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.intro-text {
+    padding: $m14 0px;
+    p {
+        font-size: 1.1em;
+        line-height: 1.8em;
+        strong { font-weight: 800; }
+    }
+    .sponsor-title { 
+        color: $color-red; 
+        // text-transform: uppercase; 
+    }
+    .sponsors {
+        img {
+            width: auto;
+            height: 50px;
+            margin: 0px $m2 $m5 $m2;
+            opacity: 0.90;
+        }
+    }
+}
+
+.team {
+    .chica {
+        min-height: 60vh;
+        @media (max-width: $md) { 
+            display: block; 
+            min-height: auto; 
+        }
+        &:nth-child(odd) {
+            .left { 
+                background-color: $color-black; 
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: center;
+                @media (max-width: $md) { align-items: flex-start; }
+                h2, h3, p, a { 
+                    text-align: right; 
+                    @media (max-width: $md) { text-align: left; }
+                }
+                h2 {
+                    font-size: 32px;
+                    margin-bottom: $m1;
+                }
+                h3 {
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    opacity: 0.5;
+                    margin-bottom: $m3;
+                }
+                p {}
+                a {
+                    margin-top: $m3;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    color: $color-red;
+                    &:hover { 
+                        color: $color-white; 
+                        text-decoration: none;
+                    }
+                }
+            }
+            .right {
+                background-color: $color-black;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                @media (max-width: $md) { display: none; }
+                &.mariana    { background-image: url('../img/background-Mariana.png'); }
+                &.aviva      { background-image: url('../img/background-Aviva.png'); }
+                &.camila     { background-image: url('../img/background-Camila.png'); }
+                &.eloiza     { background-image: url('../img/background-Eloiza.png'); }
+                &.gabriela   { background-image: url('../img/background-Gabriela.png'); }
+                &.gia        { background-image: url('../img/background-Gia.png'); }
+                &.nuala      { background-image: url('../img/background-Nuala.png'); }
+                &.diana      { background-image: url('../img/background-Diana.png'); }
+            }
+        }
+        &:nth-child(even) {
+            .left {
+                background-color: $color-black;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                @media (max-width: $md) { display: none; }
+                &.mariana    { background-image: url('../img/background-Mariana.png'); }
+                &.aviva      { background-image: url('../img/background-Aviva.png'); }
+                &.camila     { background-image: url('../img/background-Camila.png'); }
+                &.eloiza     { background-image: url('../img/background-Eloiza.png'); }
+                &.gabriela   { background-image: url('../img/background-Gabriela.png'); }
+                &.gia        { background-image: url('../img/background-Gia.png'); }
+                &.nuala      { background-image: url('../img/background-Nuala.png'); }
+                &.diana      { background-image: url('../img/background-Diana.png'); }
+            }
+            .right { 
+                background-color: $color-red; 
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                h2, h3, p, a { text-align: left; }
+                h2 {
+                    font-size: 32px;
+                    margin-bottom: $m1;
+                }
+                h3 {
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    opacity: 0.5;
+                    margin-bottom: $m3;
+                }
+                p {}
+                a {
+                    margin-top: $m3;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    color: $color-black;
+                    &:hover { 
+                        color: $color-white; 
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.current-projects {
+    padding: $m14 0px;
+    .projects {
+        display: flex; 
+        justify-content: space-between;
+        @media (max-width: $md) { display: block; }
+        .project {
+            background-color: $color-red;
+            padding: $m6 $m4 $m4 $m4;
+            margin: 0px $m4;
+            width: 33.3%;
+            @media (max-width: $md) { 
+                margin: 0px 0px $m4 0px; 
+                width: calc(100% - #{$m8}); 
+            }
+            h6, h3, p { 
+                text-align: center; 
+                color: $color-white; 
+            }
+            h6 { 
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase; 
+                letter-spacing: 0.05rem;
+                color: $color-black;
+                opacity: 0.5;
+            }
+            h3 { margin-bottom: $m4; }
+            p { 
+                font-size: 14px;
+                margin-bottom: $m4; 
+            }
+        }
+    }
+}
+
+.where-we-are {
+    .countries {
+        .continent { 
+            border-left: 5px solid  $color-red;
+            padding-left: $m2;
+            font-size: 24px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-top: $m4;
+            margin-bottom: $m8;
+            .country {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                width: 28%;
+                margin-right: $m6;
+                margin-bottom: $m6;
+                @media (max-width: $md) { width: calc(50% - #{$m4}*2); }
+                .flag {
+                    display: block;
+                    width: 80px;
+                    height: 80px;
+                    flex-shrink: 0;
+                    margin-right: $m2;
+                    border-radius: 8px;
+                    background-size: cover;
+                    &.global            { background-image: url('../img/flag-global.jpg'); }
+                    &.argentina         { background-image: url('../img/flag-argentina.jpg'); }
+                    &.triangulo-norte   { background-image: url('../img/flag-triangulo-norte.jpg'); }
+                    &.chile             { background-image: url('../img/flag-chile.jpg'); }
+                    &.ecuador           { background-image: url('../img/flag-ecuador.jpg'); }
+                    &.colombia          { background-image: url('../img/flag-colombia.jpg'); }
+                    &.venezuela         { background-image: url('../img/flag-venezuela.jpg'); }
+                    &.mexico            { background-image: url('../img/flag-mexico.jpg'); }
+                    &.brazil            { background-image: url('../img/flag-brazil.jpg'); }
+                    &.portugal          { background-image: url('../img/flag-portugal.jpg'); }
+                }
+                .details {
+                    position: relative;
+                    h4 {
+                        font-size: 20px;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        margin-top: $m1 * 1.5;
+                    }
+                    a {
+                        display: inline-block;
+                        color: $color-black;
+                        text-decoration: underline;
+                        margin-top: $m1 * 0.5;
+                        &:hover { color: $color-red; }
+                    }
+                    span {
+                        position: absolute;
+                        top: -5px;
+                        left: 0px;
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-us {
+    padding: $m6 0px;
+    color: $color-white;
+    background-image: linear-gradient( 90deg, $color-black 50%, $color-red 50%);
+    @media (max-width: $md) { background-image: none; }
+    .layout {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: $m2;
+        padding-right: $m2;
+        max-width: 900px;
+        @media (max-width: $md) { 
+            display: block; 
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .left {
+            width: 50%;
+            padding: $m6;
+            background-color: $color-black;
+            display: block;
+            @media (max-width: $md) {
+                width: calc(100% - #{$m6} - #{$m6}); 
+            }
+            a {
+                display: block;
+                font-size: 18px;
+                color: $color-white;
+                &:hover { color: $color-red; }
+                &.email { font-size: 24px; }
+            }
+        }
+        .right {
+            width: 50%;
+            padding: $m6;
+            background-color: $color-red;
+            display: block;
+            @media (max-width: $md) {
+                width: calc(100% - #{$m6} - #{$m6}); 
+            }
+        }
+    }
+}

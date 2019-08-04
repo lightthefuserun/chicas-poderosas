@@ -1,0 +1,106 @@
+// Get colors
+// @import "colors";
+
+// Default
+body {
+    font-size: 16px;
+    line-height: 1.4em;
+}
+
+.h0 {
+    font-size: 58px;
+    line-height: 1.0em;
+    margin: 0px;
+}
+
+.h1, h1 {
+    font-size: 48px;
+    line-height: 1.1em;
+    margin: 0px;
+}
+
+.h2, h2 {
+    font-size: 40px;
+    line-height: 1.1em;
+    margin: 0px;
+}
+
+.h3, h3 {
+    font-size: 34px;
+    line-height: 1.2em;
+    margin: 0px;
+}
+
+.h4, h4 {
+    font-size: 28px;
+    line-height: 1.2em;
+    margin: 0px;
+}
+
+.h5, h5 {
+    font-size: 24px;
+    line-height: 1.3em;
+    margin: 0px;
+}
+
+.h6, h6 {
+    font-size: 20px;
+    line-height: 1.3em;
+    margin: 0px;
+}
+
+.p, p {
+    font-size: 16px;
+    line-height: 1.4em;
+    margin: 0px;
+}
+
+.span, span {
+    font-size: 12px;
+    line-height: 1.2em;
+    margin: 0px;
+}
+
+// Text alignment
+.t-left      { text-align: left; }
+.t-center    { text-align: center; }
+.t-right     { text-align: right; }
+
+// Text weight
+.t-light     { font-weight: 300; }
+.t-regular   { font-weight: 400; }
+.t-semibold  { font-weight: 600; }
+.t-bold      { font-weight: 700; }
+.t-hero     { font-weight: 900; }
+
+// Text transform
+.t-uppercase   { text-transform: uppercase; }
+.t-lowercase   { text-transform: lowercase; }
+
+// Text Style
+.t-italic           { font-style: italic; }
+.t-normal           { font-style: normal; }
+
+// Media queries DESKTOP
+
+@media(min-width: 768px) {
+    .h0-md     { font-size: 58px; line-height: 1.0em; margin: 0px; }
+    .h1-md     { font-size: 48px; line-height: 1.1em; margin: 0px; }
+    .h2-md     { font-size: 40px; line-height: 1.1em; margin: 0px; }
+    .h3-md     { font-size: 34px; line-height: 1.2em; margin: 0px; }
+    .h4-md     { font-size: 28px; line-height: 1.2em; margin: 0px; }
+    .h5-md     { font-size: 24px; line-height: 1.3em; margin: 0px; }
+    .h6-md     { font-size: 20px; line-height: 1.3em; margin: 0px; }
+    .p-md      { font-size: 16px; line-height: 1.4em; margin: 0px; }
+    .span-md   { font-size: 12px; line-height: 1.2em; margin: 0px; }
+
+    .t-left-md      { text-align: left; }
+    .t-center-md    { text-align: center; }
+    .t-right-md     { text-align: right; }
+
+    .t-light-md     { font-weight: 300; }
+    .t-regular-md   { font-weight: 400; }
+    .t-semibold-md  { font-weight: 600; }
+    .t-bold-md      { font-weight: 700; }
+    .t-black-md     { font-weight: 900; }
+}
