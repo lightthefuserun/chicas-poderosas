@@ -628,7 +628,7 @@ body {
 .t-normal {
   font-style: normal; }
 
-@media (min-width: 768px) {
+@media (min-width: 768px), (min-device-width: 768px) {
   .h0-md {
     font-size: 58px;
     line-height: 1.0em;
@@ -870,37 +870,37 @@ body {
 
 .desktop-show-b, .mobile-hide-b {
   display: none; }
-  @media (min-width: 768px) {
+  @media (min-width: 768px), (min-device-width: 768px) {
     .desktop-show-b, .mobile-hide-b {
       display: block; } }
 
 .desktop-show-f, .mobile-hide-f {
   display: none; }
-  @media (min-width: 768px) {
+  @media (min-width: 768px), (min-device-width: 768px) {
     .desktop-show-f, .mobile-hide-f {
       display: flex; } }
 
 .desktop-show-g, .mobile-hide-g {
   display: none; }
-  @media (min-width: 768px) {
+  @media (min-width: 768px), (min-device-width: 768px) {
     .desktop-show-g, .mobile-hide-g {
       display: grid; } }
 
 .mobile-show-b, .desktop-hide-b {
   display: block; }
-  @media (min-width: 768px) {
+  @media (min-width: 768px), (min-device-width: 768px) {
     .mobile-show-b, .desktop-hide-b {
       display: none; } }
 
 .mobile-show-f, .desktop-hide-f {
   display: flex; }
-  @media (min-width: 768px) {
+  @media (min-width: 768px), (min-device-width: 768px) {
     .mobile-show-f, .desktop-hide-f {
       display: none; } }
 
 .mobile-show-g, .desktop-hide-g {
   display: grid; }
-  @media (min-width: 768px) {
+  @media (min-width: 768px), (min-device-width: 768px) {
     .mobile-show-g, .desktop-hide-g {
       display: none; } }
 
@@ -947,7 +947,7 @@ section {
   grid-template-rows: 1fr;
   grid-template-areas: "left right";
   color: #FDFCF6; }
-  @media only screen and (max-width: 768px) {
+  @media (max-width: 768px), (max-device-width: 768px) {
     .double-panel {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr;
@@ -978,7 +978,7 @@ section {
 
 .hero {
   min-height: 100vh; }
-  @media (max-device-width: 768px) {
+  @media (max-width: 768px), (max-device-width: 768px) {
     .hero {
       display: block;
       min-height: auto; } }
@@ -990,7 +990,7 @@ section {
     background-repeat: no-repeat;
     background-attachment: fixed;
     justify-content: center; }
-    @media (max-device-width: 768px) {
+    @media (max-width: 768px), (max-device-width: 768px) {
       .hero .left {
         background-image: none;
         background-color: #FDFCF6; } }
@@ -999,45 +999,57 @@ section {
       width: auto; }
       .hero .left .chicas-logo.desktop {
         display: block; }
-        @media (max-device-width: 768px) {
+        @media (max-width: 768px), (max-device-width: 768px) {
           .hero .left .chicas-logo.desktop {
             display: none; } }
       .hero .left .chicas-logo.mobile {
         display: none; }
-        @media (max-device-width: 768px) {
+        @media (max-width: 768px), (max-device-width: 768px) {
           .hero .left .chicas-logo.mobile {
             display: block;
-            max-width: 70vw; } }
+            max-width: 60vw; } }
   .hero .right {
     background-color: #E95D67;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start; }
-    @media (max-device-width: 768px) {
+    @media (max-width: 768px), (max-device-width: 768px) {
       .hero .right {
-        align-items: center; } }
+        align-items: center;
+        padding-top: 128px;
+        padding-bottom: 128px; } }
     .hero .right p {
       display: block; }
       .hero .right p:nth-child(1) {
         font-size: 22px;
         padding-top: 32px; }
+        @media (max-width: 768px), (max-device-width: 768px) {
+          .hero .right p:nth-child(1) {
+            font-size: 52px; } }
       .hero .right p:nth-child(2) {
         font-size: 40px;
         font-weight: 800;
         text-transform: uppercase;
         margin-bottom: 160px; }
-        @media (max-device-width: 768px) {
+        @media (max-width: 768px), (max-device-width: 768px) {
           .hero .right p:nth-child(2) {
+            font-size: 80px;
             margin-bottom: 64px;
             text-align: center; } }
       .hero .right p:nth-child(3) {
         font-size: 18px;
         margin-bottom: 8px; }
+        @media (max-width: 768px), (max-device-width: 768px) {
+          .hero .right p:nth-child(3) {
+            font-size: 52px; } }
       .hero .right p:nth-child(4) {
         font-size: 18px;
         text-transform: uppercase;
         padding: 8px 16px;
         background-color: #3B3A40; }
+        @media (max-width: 768px), (max-device-width: 768px) {
+          .hero .right p:nth-child(4) {
+            font-size: 52px; } }
 
 .intro-video {
   background-color: #3B3A40; }
@@ -1071,7 +1083,7 @@ section {
 
 .team .chica {
   min-height: 60vh; }
-  @media (max-device-width: 768px) {
+  @media (max-width: 768px), (max-device-width: 768px) {
     .team .chica {
       display: block;
       min-height: auto; } }
@@ -1080,12 +1092,12 @@ section {
     flex-direction: column;
     align-items: flex-end;
     justify-content: center; }
-    @media (max-device-width: 768px) {
+    @media (max-width: 768px), (max-device-width: 768px) {
       .team .chica:nth-child(odd) .left {
         align-items: flex-start; } }
     .team .chica:nth-child(odd) .left h2, .team .chica:nth-child(odd) .left h3, .team .chica:nth-child(odd) .left p, .team .chica:nth-child(odd) .left a {
       text-align: right; }
-      @media (max-device-width: 768px) {
+      @media (max-width: 768px), (max-device-width: 768px) {
         .team .chica:nth-child(odd) .left h2, .team .chica:nth-child(odd) .left h3, .team .chica:nth-child(odd) .left p, .team .chica:nth-child(odd) .left a {
           text-align: left; } }
     .team .chica:nth-child(odd) .left h2 {
@@ -1110,7 +1122,7 @@ section {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed; }
-    @media (max-device-width: 768px) {
+    @media (max-width: 768px), (max-device-width: 768px) {
       .team .chica:nth-child(odd) .right {
         display: none; } }
     .team .chica:nth-child(odd) .right.mariana {
@@ -1135,7 +1147,7 @@ section {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed; }
-    @media (max-device-width: 768px) {
+    @media (max-width: 768px), (max-device-width: 768px) {
       .team .chica:nth-child(even) .left {
         display: none; } }
     .team .chica:nth-child(even) .left.mariana {
@@ -1183,7 +1195,7 @@ section {
   .current-projects .projects {
     display: flex;
     justify-content: space-between; }
-    @media (max-device-width: 768px) {
+    @media (max-width: 768px), (max-device-width: 768px) {
       .current-projects .projects {
         display: block; } }
     .current-projects .projects .project {
@@ -1191,7 +1203,7 @@ section {
       padding: 48px 32px 32px 32px;
       margin: 0px 32px;
       width: 33.3%; }
-      @media (max-device-width: 768px) {
+      @media (max-width: 768px), (max-device-width: 768px) {
         .current-projects .projects .project {
           margin: 0px 0px 32px 0px;
           width: calc(100% - 64px); } }
@@ -1232,7 +1244,7 @@ section {
     width: 28%;
     margin-right: 48px;
     margin-bottom: 48px; }
-    @media (max-device-width: 768px) {
+    @media (max-width: 768px), (max-device-width: 768px) {
       .where-we-are .countries .group .country {
         width: calc(50% - 32px*2); } }
     .where-we-are .countries .group .country .flag {
@@ -1287,7 +1299,7 @@ section {
   padding: 48px 0px;
   color: #FDFCF6;
   background-image: linear-gradient(90deg, #3B3A40 50%, #E95D67 50%); }
-  @media (max-device-width: 768px) {
+  @media (max-width: 768px), (max-device-width: 768px) {
     .contact-us {
       background-image: none; } }
   .contact-us .layout {
@@ -1297,17 +1309,18 @@ section {
     padding-left: 16px;
     padding-right: 16px;
     max-width: 900px; }
-    @media (max-device-width: 768px) {
+    @media (max-width: 768px), (max-device-width: 768px) {
       .contact-us .layout {
         display: block;
         padding-left: 0px;
-        padding-right: 0px; } }
+        padding-right: 0px;
+        max-width: 100%; } }
     .contact-us .layout .left {
       width: 50%;
       padding: 48px;
       background-color: #3B3A40;
       display: block; }
-      @media (max-device-width: 768px) {
+      @media (max-width: 768px), (max-device-width: 768px) {
         .contact-us .layout .left {
           width: calc(100% - 48px - 48px); } }
       .contact-us .layout .left a {
@@ -1323,6 +1336,6 @@ section {
       padding: 48px;
       background-color: #E95D67;
       display: block; }
-      @media (max-device-width: 768px) {
+      @media (max-width: 768px), (max-device-width: 768px) {
         .contact-us .layout .right {
           width: calc(100% - 48px - 48px); } }

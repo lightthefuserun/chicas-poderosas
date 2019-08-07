@@ -21,7 +21,7 @@ section {
     grid-template-rows: 1fr;
     grid-template-areas: "left right";
     color: $color-white;
-    @media only screen and (max-width: $md) {
+    @media (max-width: $md), (max-device-width: $md) {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
         grid-template-areas: 
@@ -61,7 +61,7 @@ section {
 
 .hero { 
     min-height: 100vh;
-    @media (max-device-width: $md) { display: block; min-height: auto; }
+    @media (max-width: $md), (max-device-width: $md) { display: block; min-height: auto; }
     .left {
         // background-blend-mode: multiply;
         background-color: $color-black;
@@ -71,7 +71,7 @@ section {
         background-repeat: no-repeat;
         background-attachment: fixed;
         justify-content: center;
-        @media (max-device-width: $md) {
+        @media (max-width: $md), (max-device-width: $md) {
             background-image: none;
             background-color: $color-white;
         }
@@ -80,13 +80,13 @@ section {
             width: auto;
             &.desktop {
                 display: block;
-                @media (max-device-width: $md) { display: none; }
+                @media (max-width: $md), (max-device-width: $md) { display: none; }
             }
             &.mobile {
                 display: none;
-                @media (max-device-width: $md) { 
+                @media (max-width: $md), (max-device-width: $md) { 
                     display: block;
-                    max-width: 70vw;
+                    max-width: 60vw;
                 }
             }
         }
@@ -96,29 +96,46 @@ section {
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        @media (max-device-width: $md) { align-items: center; }
+        @media (max-width: $md), (max-device-width: $md) { 
+            align-items: center; 
+            padding-top: $m8*2;
+            padding-bottom: $m8*2;
+        }
         p {
             display: block;
             &:nth-child(1) {
                 font-size: 22px;
                 padding-top: $m4;
+                @media (max-width: $md), (max-device-width: $md) {
+                    font-size: 52px;
+                }
             }
             &:nth-child(2) {
                 font-size: 40px;
                 font-weight: 800;
                 text-transform: uppercase;
                 margin-bottom: $m10*2;
-                @media (max-device-width: $md) { margin-bottom: $m8; text-align: center; }
+                @media (max-width: $md), (max-device-width: $md) { 
+                    font-size: 80px;
+                    margin-bottom: $m8; 
+                    text-align: center; 
+                }
             }
             &:nth-child(3) {
                 font-size: 18px;
                 margin-bottom: $m1;
+                @media (max-width: $md), (max-device-width: $md) {
+                    font-size: 52px;
+                }
             }
             &:nth-child(4) {
                 font-size: 18px;
                 text-transform: uppercase;
                 padding: $m1 $m2;
                 background-color: $color-black;
+                @media (max-width: $md), (max-device-width: $md) {
+                    font-size: 52px;
+                }
             }
         }
     }
@@ -169,7 +186,7 @@ section {
 .team {
     .chica {
         min-height: 60vh;
-        @media (max-device-width: $md) { 
+        @media (max-width: $md), (max-device-width: $md) { 
             display: block; 
             min-height: auto; 
         }
@@ -179,10 +196,10 @@ section {
                 flex-direction: column;
                 align-items: flex-end;
                 justify-content: center;
-                @media (max-device-width: $md) { align-items: flex-start; }
+                @media (max-width: $md), (max-device-width: $md) { align-items: flex-start; }
                 h2, h3, p, a { 
                     text-align: right; 
-                    @media (max-device-width: $md) { text-align: left; }
+                    @media (max-width: $md), (max-device-width: $md) { text-align: left; }
                 }
                 h2 {
                     font-size: 32px;
@@ -212,7 +229,7 @@ section {
                 background-position: center;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
-                @media (max-device-width: $md) { display: none; }
+                @media (max-width: $md), (max-device-width: $md) { display: none; }
                 &.mariana    { background-image: url('../img/background-Mariana.png'); }
                 &.aviva      { background-image: url('../img/background-Aviva.png'); }
                 &.camila     { background-image: url('../img/background-Camila.png'); }
@@ -230,7 +247,7 @@ section {
                 background-position: center;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
-                @media (max-device-width: $md) { display: none; }
+                @media (max-width: $md), (max-device-width: $md) { display: none; }
                 &.mariana    { background-image: url('../img/background-Mariana.png'); }
                 &.aviva      { background-image: url('../img/background-Aviva.png'); }
                 &.camila     { background-image: url('../img/background-Camila.png'); }
@@ -277,13 +294,13 @@ section {
     .projects {
         display: flex; 
         justify-content: space-between;
-        @media (max-device-width: $md) { display: block; }
+        @media (max-width: $md), (max-device-width: $md) { display: block; }
         .project {
             background-color: $color-red;
             padding: $m6 $m4 $m4 $m4;
             margin: 0px $m4;
             width: 33.3%;
-            @media (max-device-width: $md) { 
+            @media (max-width: $md), (max-device-width: $md) { 
                 margin: 0px 0px $m4 0px; 
                 width: calc(100% - #{$m8}); 
             }
@@ -331,7 +348,7 @@ section {
                 width: 28%;
                 margin-right: $m6;
                 margin-bottom: $m6;
-                @media (max-device-width: $md) { width: calc(50% - #{$m4}*2); }
+                @media (max-width: $md), (max-device-width: $md) { width: calc(50% - #{$m4}*2); }
                 .flag {
                     display: block;
                     width: 80px;
@@ -382,7 +399,7 @@ section {
     padding: $m6 0px;
     color: $color-white;
     background-image: linear-gradient( 90deg, $color-black 50%, $color-red 50%);
-    @media (max-device-width: $md) { background-image: none; }
+    @media (max-width: $md), (max-device-width: $md) { background-image: none; }
     .layout {
         display: flex;
         margin-left: auto;
@@ -390,17 +407,18 @@ section {
         padding-left: $m2;
         padding-right: $m2;
         max-width: 900px;
-        @media (max-device-width: $md) { 
+        @media (max-width: $md), (max-device-width: $md) { 
             display: block; 
             padding-left: 0px;
             padding-right: 0px;
+            max-width: 100%;
         }
         .left {
             width: 50%;
             padding: $m6;
             background-color: $color-black;
             display: block;
-            @media (max-device-width: $md) {
+            @media (max-width: $md), (max-device-width: $md) {
                 width: calc(100% - #{$m6} - #{$m6}); 
             }
             a {
@@ -416,7 +434,7 @@ section {
             padding: $m6;
             background-color: $color-red;
             display: block;
-            @media (max-device-width: $md) {
+            @media (max-width: $md), (max-device-width: $md) {
                 width: calc(100% - #{$m6} - #{$m6}); 
             }
         }
